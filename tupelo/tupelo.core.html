@@ -100,7 +100,9 @@ Inserts an element into a collection at the specified index.</pre></div></div><d
       (+ it 3)
       (/ 10 it))
 ;=&gt; 2
-</pre></div></div><div class="public anchor" id="var-java-1-7-plus-or-throw"><h3>java-1-7-plus-or-throw</h3><h4 class="type">macro</h4><div class="usage"><code>(java-1-7-plus-or-throw &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-java-1-8-plus-or-throw"><h3>java-1-8-plus-or-throw</h3><h4 class="type">macro</h4><div class="usage"><code>(java-1-8-plus-or-throw &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-java-version"><h3>java-version</h3><div class="usage"><code>(java-version)</code></div><div class="doc"><pre class="plaintext">Inputs: []
+</pre></div></div><div class="public anchor" id="var-java-1-7-plus-or-throw"><h3>java-1-7-plus-or-throw</h3><h4 class="type">macro</h4><div class="usage"><code>(java-1-7-plus-or-throw &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included if JVM is Java 1.7 or higher. 
+Throws otherwise.</pre></div></div><div class="public anchor" id="var-java-1-8-plus-or-throw"><h3>java-1-8-plus-or-throw</h3><h4 class="type">macro</h4><div class="usage"><code>(java-1-8-plus-or-throw &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included if JVM is Java 1.8 or higher. 
+Throws otherwise.</pre></div></div><div class="public anchor" id="var-java-version"><h3>java-version</h3><div class="usage"><code>(java-version)</code></div><div class="doc"><pre class="plaintext">Inputs: []
 Returns: s/Str</pre></div></div><div class="public anchor" id="var-java-version-matches.3F"><h3>java-version-matches?</h3><div class="usage"><code>(java-version-matches? version-str)</code></div><div class="doc"><pre class="plaintext">Inputs: [version-str :- s/Str]
 Returns: s/Bool
 
@@ -123,7 +125,9 @@ sample:
              {:a 2 :b 99      :c 3}
              {:a 3 :b nil     :c 3} )  ;=&gt; true
 
-Note that a wildcald can match either a primitive or a composite value.</pre></div></div><div class="public anchor" id="var-min-clojure-1-8"><h3>min-clojure-1-8</h3><h4 class="type">macro</h4><div class="usage"><code>(min-clojure-1-8 &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-min-clojure-1-9"><h3>min-clojure-1-9</h3><h4 class="type">macro</h4><div class="usage"><code>(min-clojure-1-9 &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-nl"><h3>nl</h3><div class="usage"><code>(nl)</code></div><div class="doc"><pre class="plaintext">Abbreviated name for `newline` 
+Note that a wildcald can match either a primitive or a composite value.</pre></div></div><div class="public anchor" id="var-min-clojure-1-8"><h3>min-clojure-1-8</h3><h4 class="type">macro</h4><div class="usage"><code>(min-clojure-1-8 &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included for Clojure 1.8 or higher.  Otherwise, code is supressed.
+</pre></div></div><div class="public anchor" id="var-min-clojure-1-9"><h3>min-clojure-1-9</h3><h4 class="type">macro</h4><div class="usage"><code>(min-clojure-1-9 &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included for Clojure 1.9 or higher.  Otherwise, code is supressed.
+</pre></div></div><div class="public anchor" id="var-nl"><h3>nl</h3><div class="usage"><code>(nl)</code></div><div class="doc"><pre class="plaintext">Abbreviated name for `newline` 
 </pre></div></div><div class="public anchor" id="var-not-empty.3F"><h3>not-empty?</h3><div class="usage"><code>(not-empty? coll)</code></div><div class="doc"><pre class="plaintext">Inputs: [coll]
 Returns: s/Bool
 
@@ -138,7 +142,8 @@ Returns: s/Any
 (only seqable-arg)
 Ensures that a sequence is of length=1, and returns the only value present.
 Throws an exception if the length of the sequence is not one.
-Note that, for a length-1 sequence S, (first S), (last S) and (only S) are equivalent.</pre></div></div><div class="public anchor" id="var-pre-clojure-1-9"><h3>pre-clojure-1-9</h3><h4 class="type">macro</h4><div class="usage"><code>(pre-clojure-1-9 &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-prepend"><h3>prepend</h3><div class="usage"><code>(prepend &amp; args)</code></div><div class="doc"><pre class="plaintext">Inputs: [&amp; args]
+Note that, for a length-1 sequence S, (first S), (last S) and (only S) are equivalent.</pre></div></div><div class="public anchor" id="var-pre-clojure-1-9"><h3>pre-clojure-1-9</h3><h4 class="type">macro</h4><div class="usage"><code>(pre-clojure-1-9 &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included for Clojure versions prior to 1.9.  Otherwise, code is supressed.
+</pre></div></div><div class="public anchor" id="var-prepend"><h3>prepend</h3><div class="usage"><code>(prepend &amp; args)</code></div><div class="doc"><pre class="plaintext">Inputs: [&amp; args]
 Returns: ts/List
 
 Given a sequential object (vector or list), add one or more elements to the beginning</pre></div></div><div class="public anchor" id="var-pretty"><h3>pretty</h3><div class="usage"><code>(pretty &amp; args)</code></div><div class="doc"><pre class="plaintext">Shortcut to clojure.pprint/pprint
