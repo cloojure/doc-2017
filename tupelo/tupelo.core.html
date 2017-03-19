@@ -155,7 +155,6 @@ Ensures that a sequence is of length=1, and returns the only value present.
 Throws an exception if the length of the sequence is not one.
 Note that, for a length-1 sequence S, (first S), (last S) and (only S) are equivalent.</pre></div></div><div class="public anchor" id="var-partition-using"><h3>partition-using</h3><div class="usage"><code>(partition-using pred values)</code></div><div class="doc"><pre class="plaintext">Inputs: [pred :- s/Any values :- ts/List]
 
-(partition-using pred values)
 Partitions a collection into vector of segments based on a predicate with a collection argument.
 The first segment is initialized by removing the first element from `values`, with subsequent
 elements similarly transferred as long as `(pred remaining-values)` is falsey. When
