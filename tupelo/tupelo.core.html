@@ -318,11 +318,12 @@ Used to validate intermediate results. Returns tst-val if the result of
 (tst-fn tst-val) is truthy.  Otherwise, throws IllegalStateException.</pre></div></div><div class="public anchor" id="var-vals-.3Emap"><h3>vals-&gt;map</h3><h4 class="type">macro</h4><div class="usage"><code>(vals-&gt;map &amp; symbols)</code></div><div class="doc"><pre class="plaintext">Called with a list of symbols like `(vals-&gt;map a b c)` returns a map
 like {:a a :b b :c c}.
 
-  (def a 1)
-  (def b 2)
-  (def c 3)
-  (vals-&gt;map a b c)  ;=&gt;  {:a 1 :b 2 :c 3} }
-</pre></div></div><div class="public anchor" id="var-vec-.3Elist"><h3>vec-&gt;list</h3><div class="usage"><code>(vec-&gt;list arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- [s/Any]]
+    (def a 1)
+    (def b 2)
+    (def c 3)
+    (vals-&gt;map a b c)  ;=&gt;  {:a 1 :b 2 :c 3} }
+
+See `with-map-vals` for simple destructuring of such maps. </pre></div></div><div class="public anchor" id="var-vec-.3Elist"><h3>vec-&gt;list</h3><div class="usage"><code>(vec-&gt;list arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- [s/Any]]
 Returns: [s/Any]</pre></div></div><div class="public anchor" id="var-when-clojure-1-8-plus"><h3>when-clojure-1-8-plus</h3><h4 class="type">macro</h4><div class="usage"><code>(when-clojure-1-8-plus &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included for Clojure 1.8 or higher.  Otherwise, code is supressed.
 </pre></div></div><div class="public anchor" id="var-when-clojure-1-9-plus"><h3>when-clojure-1-9-plus</h3><h4 class="type">macro</h4><div class="usage"><code>(when-clojure-1-9-plus &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included for Clojure 1.9 or higher.  Otherwise, code is supressed.
 </pre></div></div><div class="public anchor" id="var-when-not-clojure-1-9-plus"><h3>when-not-clojure-1-9-plus</h3><h4 class="type">macro</h4><div class="usage"><code>(when-not-clojure-1-9-plus &amp; forms)</code></div><div class="doc"><pre class="plaintext">Wraps code that should only be included for Clojure versions prior to 1.9.  Otherwise, code is supressed.
@@ -362,7 +363,8 @@ performs safe `let` destructuring using `grab` like:
      (with-map-vals some-map [a b c]
         (+ a b c)))  ;=&gt;  6
 
-`with-map-vals` is safe for typos since `grab` will throw is the requrested map key is not present.</pre></div></div><div class="public anchor" id="var-with-spy-enabled"><h3>with-spy-enabled</h3><h4 class="type">macro</h4><div class="usage"><code>(with-spy-enabled tag &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-with-spy-indent"><h3>with-spy-indent</h3><h4 class="type">macro</h4><div class="usage"><code>(with-spy-indent &amp; body)</code></div><div class="doc"><pre class="plaintext">Increments indentation level of all spy, spyx, or spyxx expressions within the body.
+`with-map-vals` is safe for typos since `grab` will throw is the requrested map key is not present.
+See `vals-&gt;map` for simple creation of labelled data maps.</pre></div></div><div class="public anchor" id="var-with-spy-enabled"><h3>with-spy-enabled</h3><h4 class="type">macro</h4><div class="usage"><code>(with-spy-enabled tag &amp; forms)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-with-spy-indent"><h3>with-spy-indent</h3><h4 class="type">macro</h4><div class="usage"><code>(with-spy-indent &amp; body)</code></div><div class="doc"><pre class="plaintext">Increments indentation level of all spy, spyx, or spyxx expressions within the body.
 </pre></div></div><div class="public anchor" id="var-xfirst"><h3>xfirst</h3><div class="usage"><code>(xfirst arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- [s/Any]]
 Returns: s/Any
 
