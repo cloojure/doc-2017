@@ -118,7 +118,10 @@ last expression.</pre></div></div><div class="public anchor" id="var-lexical-com
 [3]
 [3 :y] </pre></div></div><div class="public anchor" id="var-macro.3F"><h3>macro?</h3><div class="usage"><code>(macro? s)</code></div><div class="doc"><pre class="plaintext">Returns true if a quoted symbol resolves to a macro. Usage:
 
-(println (macro? 'and))  ;=&gt; true </pre></div></div><div class="public anchor" id="var-map-keys"><h3>map-keys</h3><div class="usage"><code>(map-keys map-in tx-fn &amp; tx-args)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-map-let"><h3>map-let</h3><h4 class="type">macro</h4><div class="usage"><code>(map-let bindings &amp; forms)</code></div><div class="doc"><pre class="plaintext">Usage:
+(println (macro? 'and))  ;=&gt; true </pre></div></div><div class="public anchor" id="var-map-keys"><h3>map-keys</h3><div class="usage"><code>(map-keys map-in tx-fn &amp; tx-args)</code></div><div class="doc"><pre class="plaintext">Transforms each value in a map using the supplied `tx-fn`:
+
+(t/map-keys {1 :a 2 :b 3 :c} inc)                  =&gt;  {  2 :a   3 :b 4   :c}
+(t/map-keys {1 :a 2 :b 3 :c} {1 101 2 202 3 303})  =&gt;  {101 :a 202 :b 303 :c}</pre></div></div><div class="public anchor" id="var-map-let"><h3>map-let</h3><h4 class="type">macro</h4><div class="usage"><code>(map-let bindings &amp; forms)</code></div><div class="doc"><pre class="plaintext">Usage:
   (map-let bindings &amp; forms)
 
 Given bindings and forms like `(map-let [x xs, y ys, ...] (+ x y))`, will iterate over the
@@ -128,7 +131,10 @@ Will throw if collections are not all of the same length. Not lazy.</pre></div><
 
 where ctx is a map with default values:
   {:strict true
-   :lazy   false}</pre></div></div><div class="public anchor" id="var-map-vals"><h3>map-vals</h3><div class="usage"><code>(map-vals map-in tx-fn &amp; tx-args)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-matches.3F"><h3>matches?</h3><h4 class="type">macro</h4><div class="usage"><code>(matches? pattern &amp; values)</code></div><div class="doc"><pre class="plaintext">A shortcut to clojure.core.match/match to aid in testing.  Returns true if the data value
+   :lazy   false}</pre></div></div><div class="public anchor" id="var-map-vals"><h3>map-vals</h3><div class="usage"><code>(map-vals map-in tx-fn &amp; tx-args)</code></div><div class="doc"><pre class="plaintext">Transforms each value in a map using the supplied `tx-fn`:
+
+(t/map-vals {:a 1 :b 2 :c 3} inc)                  =&gt;  {:a 2,   :b 3,   :c 4}
+(t/map-vals {:a 1 :b 2 :c 3} {1 101 2 202 3 303})  =&gt;  {:a 101, :b 202, :c 303} </pre></div></div><div class="public anchor" id="var-matches.3F"><h3>matches?</h3><h4 class="type">macro</h4><div class="usage"><code>(matches? pattern &amp; values)</code></div><div class="doc"><pre class="plaintext">A shortcut to clojure.core.match/match to aid in testing.  Returns true if the data value
 matches the pattern value.  Underscores serve as wildcard values. Usage:
 
   (matches? pattern &amp; values)
